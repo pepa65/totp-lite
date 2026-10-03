@@ -20,4 +20,4 @@ sha1 = "0.11"
 sha2 = "0.11"
 
 [dev-dependencies]
-base32 = { version = "1.0.0-rc.1", features = ["std"] }
+base32 = "1.0.0-rc.1"
