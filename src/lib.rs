@@ -35,8 +35,6 @@
 //!
 //! [RFC6238]: https://tools.ietf.org/html/rfc6238
 
-#![doc(html_root_url = "https://docs.rs/totp-lite/2.1.0")]
-
 use digest::{KeyInit, block_api::EagerHash};
 use hmac::{Hmac, Mac};
 pub use sha1::Sha1;
