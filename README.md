@@ -1,6 +1,6 @@
 [![Workflow Status](https://github.com/pepa65/totp-lite/workflows/Rust/badge.svg)](https://github.com/pepa65/totp-lite/actions?query=workflow%3A%22Rust%22)
 [![](https://img.shields.io/crates/v/totp-lite_.svg)](https://crates.io/crates/totp-lite_)
-# totp-lite_ 2.1.0
+# totp-lite_ 2.2.0
 **A simple, correct TOTP library**
 
 Time-based One-time Passwords are a useful way to authenticate a client,
