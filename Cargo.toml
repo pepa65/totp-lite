@@ -2,6 +2,7 @@
 name = "totp-lite_"
 version = "2.2.0"
 edition = "2024"
+rust-version = "1.85.1"
 authors = ["Colin Woodbury <colin@fosskers.ca>", "<github.com/pepa65>"]
 description = "A simple, correct TOTP library."
 repository = "https://github.com/pepa65/totp-lite"
