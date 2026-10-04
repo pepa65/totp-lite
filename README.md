@@ -1,15 +1,14 @@
-[![Workflow Status](https://github.com/pepa65/totp-lite/workflows/Rust/badge.svg)](https://github.com/pepa65/totp-lite/actions?query=workflow%3A%22Rust%22)
-[![](https://img.shields.io/crates/v/totp-lite_.svg)](https://crates.io/crates/totp-lite_)
+[![version](https://img.shields.io/crates/v/totp-lite_.svg)](https://crates.io/crates/totp-lite_)
+[![build](https://github.com/pepa65/totp-lite_/actions/workflows/rust.yml/badge.svg)](https://github.com/pepa65/totp-lite_/actions/workflows/rust.yml)
+[![dependencies](https://deps.rs/repo/github/pepa65/totp-lite_/status.svg)](https://deps.rs/repo/github/pepa65/totp-lite_)
+[![docs](https://img.shields.io/badge/docs-totp-lite_-blue.svg)](https://docs.rs/crate/totp-lite_/latest)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/pepa65/totp-lite_/blob/master/LICENSE)
+[![downloads](https://img.shields.io/crates/d/totp-lite_.svg)](https://crates.io/crates/totp-lite_)
 # totp-lite_ 2.2.0
 **A simple, correct TOTP library**
 
-Time-based One-time Passwords are a useful way to authenticate a client,
-since a valid password expires long before it could ever be guessed by an
-attacker. This library provides an implementation of TOTP that matches its
-specification [RFC6238], along with a simple interface.
-
 ## Replacement for the totp-lite crate
-**This repo is cloned from github.com//totp-lite in order to modernize it and bring it up to date**
+**This repo is cloned from github.com/fosskers/totp-lite in order to modernize it and bring it up to date**
 
 To use this crate instead of the unmaintained `totp-lite`, add this to `Cargo.toml`:
 ```
@@ -17,33 +16,32 @@ To use this crate instead of the unmaintained `totp-lite`, add this to `Cargo.to
 totp-lite = { package = "totp-lite_", version = "2" }
 ```
 
+## Digest
+Time-based One-time Passwords are a useful way to authenticate a client,
+since a valid password expires long before it could ever be guessed by an
+attacker. This library provides an implementation of TOTP that matches its
+specification [RFC6238], along with a simple interface.
+
 ## Usage
-The `totp` function is likely what you need. It uses the default time step
-of 30 seconds and produces by default 8 digits of output:
+The standard `totp` function uses a time step of `30` seconds and
+produces `8` digits of output. Use `totp_custom` for other values.
 
 ```rust
 use std::time::{SystemTime, UNIX_EPOCH};
-use totp_lite::{totp, Sha1};
+use totp_lite::{totp, Sha512};
 
 // Negotiated between you and the authenticating service.
-let password: &[u8] = b"secret";
+let secret: &[u8] = b"secret";
 
 // The number of seconds since the Unix Epoch.
-let seconds: u64 = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
+let time: u64 = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
 
-// Specify the desired Hash algorithm via a type parameter.
-// `Sha512` and `Sha256` are also available.
-let result: String = totp::<Sha1>(password, seconds);
-assert_eq!(8, result.len());
+// Specify the Hash algorithm with a type parameter: Sha1, Sha256 or Sha512.
+let code: String = totp::<Sha512>(secret, time);
+assert_eq!(8, code.len());
 ```
 
-For full control over how the algorithm is configured, consider
-`totp_custom`.
-
 ## Resources
-* [RFC6238: TOTP][RFC6238]
+* [RFC6238: TOTP](https://tools.ietf.org/html/rfc6238)
 * [RFC6238 Errata](https://www.rfc-editor.org/errata_search.php?rfc=6238)
-
-[RFC6238]: https://tools.ietf.org/html/rfc6238
-
-License: MIT
+* License: MIT

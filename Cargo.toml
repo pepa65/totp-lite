@@ -1,23 +1,30 @@
 [package]
 name = "totp-lite_"
 version = "2.2.0"
-authors = ["Colin Woodbury <colin@fosskers.ca>", "<github.com/pepa65>"]
 edition = "2024"
+authors = ["Colin Woodbury <colin@fosskers.ca>", "<github.com/pepa65>"]
 description = "A simple, correct TOTP library."
 repository = "https://github.com/pepa65/totp-lite"
+documentation = "https://docs.rs/totp-lite/"
 readme = "README.md"
 license = "MIT"
 keywords = ["authentication", "totp", "otp", "2fa"]
-categories = ["authentication"]
+categories = ["authentication", "algorithms", "security"]
 
 [lib]
 name = "totp_lite"
 
+[[example]]
+name = "ga"
+path = "examples/ga.rs"
+
 [dependencies]
+# All github/RustCrypto crates
 digest = "0.11"
 hmac = "0.13"
 sha1 = "0.11"
 sha2 = "0.11"
 
 [dev-dependencies]
+# What base32ct depends on
 base32 = "1.0.0-rc.1"
