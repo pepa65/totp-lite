@@ -1,7 +1,7 @@
 [![version](https://img.shields.io/crates/v/totp-lite_.svg)](https://crates.io/crates/totp-lite_)
 [![build](https://github.com/pepa65/totp-lite/actions/workflows/rust.yml/badge.svg)](https://github.com/pepa65/totp-lite/actions/workflows/rust.yml)
 [![dependencies](https://deps.rs/repo/github/pepa65/totp-lite/status.svg)](https://deps.rs/repo/github/pepa65/totp-lite)
-[![docs](https://img.shields.io/badge/docs-totp-lite_-blue.svg)](https://docs.rs/crate/totp-lite_/latest)
+[![docs](https://img.shields.io/badge/docs-totp-lite-blue.svg)](https://docs.rs/crate/totp-lite_/latest)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/pepa65/totp-lite/blob/master/LICENSE)
 [![downloads](https://img.shields.io/crates/d/totp-lite_.svg)](https://crates.io/crates/totp-lite_)
 # totp-lite_ 2.2.0
