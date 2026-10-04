@@ -6,7 +6,7 @@ rust-version = "1.85.1"
 authors = ["Colin Woodbury <colin@fosskers.ca>", "<github.com/pepa65>"]
 description = "A simple, correct TOTP library."
 repository = "https://github.com/pepa65/totp-lite"
-documentation = "https://docs.rs/totp-lite/"
+documentation = "https://docs.rs/totp-lite_/"
 readme = "README.md"
 license = "MIT"
 keywords = ["authentication", "totp", "otp", "2fa"]
@@ -27,5 +27,5 @@ sha1 = "0.11"
 sha2 = "0.11"
 
 [dev-dependencies]
-# What base32ct depends on
+# What github/RustCrypto/base32ct depends on
 base32 = "1.0.0-rc.1"
