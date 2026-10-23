@@ -4,7 +4,7 @@
 [![docs](https://img.shields.io/badge/docs-totp--lite-blue.svg)](https://docs.rs/crate/totp-lite_/latest)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/pepa65/totp-lite/blob/master/LICENSE)
 [![downloads](https://img.shields.io/crates/d/totp-lite_.svg)](https://crates.io/crates/totp-lite_)
-# totp-lite_ 2.3.0
+# totp-lite_ 2.3.1
 **A simple, correct TOTP library**
 
 ## Replacement for the totp-lite crate
